@@ -3,7 +3,7 @@
 Hey !
 In this js mini game, you will have to guess which movie is the highest rated ! (based on TMDB api : https://developers.themoviedb.org/3/getting-started/introduction)
 
-Test it by clicking [here](https://nicoalz.github.io/guess-movie-rate/) !
+Test it by clicking [here](https://guess-movie-rate.nicolasbordeaux.tk/) !
 
 ## How it works ?
 
