@@ -91,6 +91,13 @@ function start() {
 }
 
 function userVoteLeft() {
+
+    console.log(score);
+
+    if (score == 5) {
+        clearInterval(Interval);
+    }
+
     doc_movie1Vote.style.display = "block";
     doc_movie2Vote.style.display = "block";
 
@@ -114,9 +121,14 @@ function userVoteLeft() {
     doc_score.innerHTML = "Score : " + score;
     doc_movie1Vote.innerHTML = "Rate : " + movieVoteLeft + "%";
     doc_movie2Vote.innerHTML = "Rate : " + movieVoteRight + "%";
+
+    if (score == 5) {
+        clearInterval(Interval);
+    }
 }
 
 function userVoteRight() {
+
     doc_movie1Vote.style.display = "block";
     doc_movie2Vote.style.display = "block";
 
@@ -139,6 +151,10 @@ function userVoteRight() {
     doc_score.innerHTML = "Score : " + score;
     doc_movie1Vote.innerHTML = "Rate : " + movieVoteLeft + "%";
     doc_movie2Vote.innerHTML = "Rate : " + movieVoteRight + "%";
+
+    if (score == 5) {
+        clearInterval(Interval);
+    }
 }
 
 
@@ -147,3 +163,70 @@ button.addEventListener("click", start);
 left.addEventListener("click", userVoteLeft);
 right.addEventListener("click", userVoteRight);
 
+debut = document.getElementById('debut');
+pause = document.getElementById('pause');
+reset = document.getElementById('reset');
+
+var Interval;
+
+spanTens= document.getElementById('tens');
+spanSeconds = document.getElementById('seconds');
+spanMinutes = document.getElementById('minutes');
+
+tens = 0;
+seconds= 0;
+minutes = 0;
+
+debut.addEventListener('click', function() {
+    debut.style.display ="none";
+    reset.style.display ="block";
+    start();
+    clearInterval(Interval);
+    Interval = setInterval(startTimer, 10);
+});
+
+
+
+reset.addEventListener('click', function() {
+    location.reload();
+});
+
+
+function startTimer () {
+    tens++; 
+
+    if (tens <10) {
+        spanTens.innerHTML = "0" + tens;
+    }
+
+    if (tens >=10) {
+        spanTens.innerHTML = tens;
+    }
+
+    if (tens > 99) {
+        tens = 0;
+        seconds++;
+    }
+
+    if (seconds <10) {
+        spanSeconds.innerHTML = "0" + seconds;
+    }
+
+    if (seconds >=10) {
+        spanSeconds.innerHTML = seconds;
+    }
+    
+    if (seconds > 59) {
+        seconds = 0;
+        minutes++;
+    }
+
+    if (minutes <10) {
+        spanMinutes.innerHTML = "0" + minutes;
+    }
+
+    if (minutes >=10) {
+        spanMinutes.innerHTML = minutes;
+    }
+
+}

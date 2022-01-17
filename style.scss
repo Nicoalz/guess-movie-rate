@@ -75,6 +75,9 @@ html {
         .global {
             text-align: center;        
         
+            .button {
+                visibility: hidden;
+            }
             #result {
                 display: flex;
                 justify-content: center;
@@ -97,6 +100,8 @@ html {
     }
 
     .button {
+        text-align: center;
+        margin-bottom: 20px;
         padding: 15px 40px;
         cursor: pointer;
         display: flex;
@@ -116,4 +121,18 @@ html {
     }
 
 
+    .timer {
+
+        p {
+            width: 300px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+
+        #reset {
+            display: none;
+        }
+    }
 }

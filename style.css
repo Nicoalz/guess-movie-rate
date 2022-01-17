@@ -67,6 +67,9 @@ html {
 .contest .movies .global {
   text-align: center;
 }
+.contest .movies .global .button {
+  visibility: hidden;
+}
 .contest .movies .global #result {
   display: flex;
   justify-content: center;
@@ -86,6 +89,8 @@ html {
   border-bottom: solid 1px black;
 }
 .contest .button {
+  text-align: center;
+  margin-bottom: 20px;
   padding: 15px 40px;
   cursor: pointer;
   display: flex;
@@ -102,6 +107,15 @@ html {
   background-color: black;
   color: white;
   transition: 0.5s;
+}
+.contest .timer p {
+  width: 300px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+.contest .timer #reset {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
