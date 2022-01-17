@@ -27,13 +27,15 @@ doc_score.innerHTML = "Score : " + score;
 
 async function getMovies(title1, img1, title2, img2) {
 
+    doc_movie1Vote.style.display = "none";
+    doc_movie2Vote.style.display = "none";
     result.innerHTML = "";
     result.style.color = "black";
     doc_movie1Vote.innerHTML = "";
     doc_movie2Vote.innerHTML = "";
     button.style.visibility = "hidden";
-    left.style.visibility = "visible";
-    right.style.visibility = "visible";
+    left.style.display = "block";
+    right.style.display = "block";
 
     // Movie 1
     randomPage1 = Math.floor(Math.random() * 33 + 1);
@@ -89,9 +91,11 @@ function start() {
 }
 
 function userVoteLeft() {
+    doc_movie1Vote.style.display = "block";
+    doc_movie2Vote.style.display = "block";
 
-    left.style.visibility = "hidden";
-    right.style.visibility = "hidden";
+    left.style.display = "none";
+    right.style.display = "none";
     button.style.visibility = "visible";
 
     if(voteLeft > voteRight){
@@ -113,9 +117,11 @@ function userVoteLeft() {
 }
 
 function userVoteRight() {
+    doc_movie1Vote.style.display = "block";
+    doc_movie2Vote.style.display = "block";
 
-    left.style.visibility = "hidden";
-    right.style.visibility = "hidden";
+    left.style.display = "none";
+    right.style.display = "none";
     button.style.visibility = "visible";
 
     if(voteRight > voteLeft){
